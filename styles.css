@@ -1,0 +1,34 @@
+#container {
+border: solid 3px red;
+}
+
+#question-container {
+    border: solid 3px green;  
+}
+
+#next-button {
+    border: solid 3px rgb(233, 219, 19);  
+  
+}
+
+#tf-buttons {
+    border: solid 3px rgb(240, 15, 214);  
+
+}
+
+header {
+    background-color:#113F69;  
+    color: #E69138;
+
+}
+
+footer {
+    background-color: #113F69;
+    color: #E69138
+}
+
+body {
+    margin: 0; 
+    padding: 0;
+    background-color: #6CA3D7;
+}
