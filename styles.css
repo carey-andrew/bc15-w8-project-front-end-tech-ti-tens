@@ -37,12 +37,36 @@
   background-color: #6ca3d7;
 
 }
+
+
 #tf-buttons {
   border: solid 3px rgb(240, 15, 214);
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+.buttons {
+    padding: 30px 50px;
+    border-radius: 50px;
+    margin: 20px 25px;
+    font-size: 1.25rem;
+    border: solid 2px rgb(87, 85, 85)
+}
+
+#true-button {
+    background-color: #5BC236;
+    color: black;
+    
+}
+
+#false-button {
+    background-color: #F66F6F;
+    color: black;
+
+}
+
+
 header {
   background-color: #113f69;
   color: #e69138;
@@ -51,14 +75,19 @@ header {
   text-align: center;
 }
 
+
 footer {
   background-color: #113f69;
   color: #e69138;
   position: absolute;
   bottom: 0;
   width: 100%;
+  height: 5rem;
   text-align: center;
+
 }
+
+
 html,
 body {
   background-color: #6ca3d7;
