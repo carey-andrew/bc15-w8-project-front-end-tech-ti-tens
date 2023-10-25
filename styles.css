@@ -1,50 +1,67 @@
-*, *::before, *::after{
-    box-sizing: border-box;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 #container {
-    border: solid 3px red;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 20rem;
-    background-color: white;
-    border-radius: 10px;
-    width: 20rem;
-    margin: 20px auto;
-  }
-  #question-container {
-    border: solid 3px green;
-    display: grid;
-  }
-  #next-button {
-    border: solid 3px rgb(233, 219, 19);
-  }
-  #tf-buttons {
-    border: solid 3px rgb(240, 15, 214);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  header {
-    background-color: #113F69;
-    color: #E69138;
-    height: 5rem;
-    padding: 10px;
-    text-align: center;
-  }
+  border: solid 3px red;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 25rem;
+  background-color: white;
+  border-radius: 40px;
+  width: 20rem;
+  margin: 20px auto;
+}
+#question-container {
+  border: solid 3px green;
+  min-width: 15rem;
+  min-height: 18rem;
+  margin: 10px;
+}
+#question-text{
+  text-align: center;
+}
 
-  footer {
-    background-color: #113F69;
-    color: #E69138;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-  }
-  html, body {
-    background-color: #6CA3D7;
-    margin: 0;
-    padding: 0;
-    
-  }
+#next-button {
+  border: solid 3px rgb(233, 219, 19);
+  
+}
+
+#next-button button{
+  border-radius: 20px;
+  padding: 10px 15px;
+  background-color: #6ca3d7;
+
+}
+#tf-buttons {
+  border: solid 3px rgb(240, 15, 214);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header {
+  background-color: #113f69;
+  color: #e69138;
+  height: 5rem;
+  padding: 10px;
+  text-align: center;
+}
+
+footer {
+  background-color: #113f69;
+  color: #e69138;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+html,
+body {
+  background-color: #6ca3d7;
+  margin: 0;
+  padding: 0;
+}
