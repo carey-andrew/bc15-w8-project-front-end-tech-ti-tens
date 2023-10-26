@@ -5,6 +5,21 @@
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
+@keyframes pulse {
+  0% {
+      color: #E69138; /* Initial text color */
+  }
+  50% {
+      color: #FFD240; /* Color at 50% of the animation */
+  }
+  100% {
+      color: #E69138; /* Back to the initial text color */
+  }
+}
+.pulsing-text {
+    animation: pulse 2s infinite;
+}
+
 .main-header {
 font-size: 3rem;
 margin: 0;
