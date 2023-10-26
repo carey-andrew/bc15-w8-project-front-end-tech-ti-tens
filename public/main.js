@@ -41,9 +41,12 @@ const placeholderText = document.getElementById("statement-text");
 // send get request to api to fetch the statment
 // store the answer in a variable
 //taget the border
+
+let response =  ""
+
 const container = document.getElementById("container");
 nextButton.addEventListener("click", async function () {
-  const response = await getData();
+ response = await getData();
   console.log(response);
   //store speonses in variables
   let statement = response.data.statement;
@@ -54,7 +57,7 @@ nextButton.addEventListener("click", async function () {
   tfButton.style.display = "flex";
   //change placeholder text to statement text
   placeholderText.innerHTML = statement;
-  container.style.border = "solid 3px #e69138;";
+  container.style.border = "solid 10px #e69138";
 });
 
 // target the true button
@@ -65,24 +68,26 @@ const falseButton = document.getElementById("false-button");
 
 // for true button
 trueButton.addEventListener("click", async function () {
-  const response = await getData();
+  // const response = await getData();
   let correctAns = response.data.answer;
-  if (correctAns == "True") {
+  if (correctAns === "True") {
     placeholderText.innerHTML = "Correct";
-    container.style.border = "5px solid green";
-  } else if (correctAns == "False") {
+    container.style.border = "10px solid green";
+  } else if (correctAns === "False") {
     placeholderText.innerHTML = "Incorrect";
-    container.style.border = "5px solid red";
+    container.style.border = "10px solid red";
   }
 });
 
 falseButton.addEventListener("click", async function () {
-  const response = await getData();
+  // const response = await getData();
   let correctAns = response.data.answer;
-  if (correctAns == "False") {
+  if (correctAns === "False") {
     placeholderText.innerHTML = "Correct";
-  } else if (correctAns == "True") {
+    container.style.border = "10px solid green"
+  } else if (correctAns === "True") {
     placeholderText.innerHTML = "Incorrect";
+    container.style.border = "10px solid red";
   }
 });
 

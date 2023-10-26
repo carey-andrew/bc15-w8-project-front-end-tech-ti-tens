@@ -5,7 +5,7 @@
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 #container {
-  border: solid 3px red;
+  border: solid 10px #e69138;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -17,7 +17,7 @@
   margin: 20px auto;
 }
 #question-container {
-  border: solid 3px green;
+  /* border: solid 3px green; */
   min-width: 15rem;
   min-height: 18rem;
   margin: 10px;
@@ -27,7 +27,7 @@
 }
 
 #next-button {
-  border: solid 3px rgb(233, 219, 19);
+  /* border: solid 3px rgb(233, 219, 19); */
   
 }
 
@@ -40,7 +40,7 @@
 
 
 #tf-buttons {
-  border: solid 3px rgb(240, 15, 214);
+  /* border: solid 3px rgb(240, 15, 214); */
   display: flex;
   justify-content: center;
   align-items: center;
