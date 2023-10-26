@@ -12,6 +12,16 @@ return num;
 //   getData(2);
 // });
 
+
+//pulse the background red when clicking wrong answer
+
+function pulseBackgroundred() {
+  document.body.style.backgroundColor = "red"; // Set initial background color to red
+    setTimeout(function() {
+        body.style.backgroundColor = "#6ca3d7"; // Set final background original colour after 2 seconds
+    }, 2000);
+}
+
 async function getData() {
 const questionId = randomNumber();
   // Declare a variable to store the HTTP response
@@ -43,7 +53,7 @@ const placeholderText = document.getElementById("statement-text");
 //taget the border
 
 let response =  ""
-
+const body = document.body;
 const container = document.getElementById("container");
 nextButton.addEventListener("click", async function () {
  response = await getData();
@@ -73,9 +83,17 @@ trueButton.addEventListener("click", async function () {
   if (correctAns === "True") {
     placeholderText.innerHTML = "Correct";
     container.style.border = "10px solid green";
+    body.style.backgroundColor = "green"; // Set initial background color to red
+    setTimeout(function() {
+        document.body.style.backgroundColor = "#6ca3d7"; // Set final background original colour after 1 second
+    }, 1000);
   } else if (correctAns === "False") {
     placeholderText.innerHTML = "Incorrect";
     container.style.border = "10px solid red";
+    body.style.backgroundColor = "red"; // Set initial background color to red
+    setTimeout(function() {
+        document.body.style.backgroundColor = "#6ca3d7"; // Set final background original colour after 1 second
+    }, 1000);
   }
 });
 
@@ -85,9 +103,17 @@ falseButton.addEventListener("click", async function () {
   if (correctAns === "False") {
     placeholderText.innerHTML = "Correct";
     container.style.border = "10px solid green"
+    body.style.backgroundColor = "green"; // Set initial background color to red
+    setTimeout(function() {
+        document.body.style.backgroundColor = "#6ca3d7"; // Set final background original colour after 1 second
+    }, 1000);
   } else if (correctAns === "True") {
     placeholderText.innerHTML = "Incorrect";
     container.style.border = "10px solid red";
+    body.style.backgroundColor = "red"; // Set initial background color to red
+    setTimeout(function() {
+        document.body.style.backgroundColor = "#6ca3d7"; // Set final background original colour after 1 second
+    }, 1000);
   }
 });
 
