@@ -5,15 +5,15 @@ tfButton.style.display = "none";
 const nextButton = document.getElementById("NB");
 
 function randomNumber() {
-  const num = Math.floor(Math.random() * 20) + 1;
-  return num;
+const num = Math.floor(Math.random() * 20) + 1;
+return num;
 }
 // nextButton.addEventListener("click", async function () {
 //   getData(2);
 // });
 
 async function getData() {
-  const questionId = randomNumber();
+const questionId = randomNumber();
   // Declare a variable to store the HTTP response
   const response = await fetch(`http://localhost:8800/quiz/${questionId}`, {
     headers: {
@@ -94,4 +94,3 @@ falseButton.addEventListener("click", async function () {
 // if true, change boarder colour to green and display "well done this is true-press next to continue"
 // display next question
 
-haya minhas
