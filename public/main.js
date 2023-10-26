@@ -10,7 +10,7 @@ const nextButton = document.getElementById("NB");
 let answered = false;
 
 function randomNumber() {
-const num = Math.floor(Math.random() * 20) + 1;
+const num = Math.floor(Math.random() * 19) + 1;
 return num;
 }
 // nextButton.addEventListener("click", async function () {

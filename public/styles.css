@@ -40,7 +40,7 @@
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 #question-container {
-  flex-wrap: wrap;
+  word-wrap: break-word;
   min-width: 15rem;
   min-height: 18rem;
   margin: 10px;
