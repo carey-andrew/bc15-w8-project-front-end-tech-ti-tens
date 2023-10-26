@@ -2,6 +2,9 @@
 const tfButton = document.getElementById("tf-buttons");
 tfButton.style.display = "none";
 
+const noScore = document.getElementById("score");
+noScore.style.display = "none";
+
 const nextButton = document.getElementById("NB");
 
 function randomNumber() {
@@ -53,6 +56,10 @@ const placeholderText = document.getElementById("statement-text");
 //taget the border
 
 let response =  ""
+
+let score = 0;
+
+const scoreDisplay = document.getElementById("score");
 const body = document.body;
 const container = document.getElementById("container");
 nextButton.addEventListener("click", async function () {
@@ -65,6 +72,7 @@ nextButton.addEventListener("click", async function () {
   console.log(correctAns);
   //display the tf buttons
   tfButton.style.display = "flex";
+  noScore.style.display = "flex";
   //change placeholder text to statement text
   placeholderText.innerHTML = statement;
   container.style.border = "solid 10px #e69138";
@@ -87,6 +95,7 @@ trueButton.addEventListener("click", async function () {
     setTimeout(function() {
         document.body.style.backgroundColor = "#6ca3d7"; // Set final background original colour after 1 second
     }, 1000);
+    score++;
   } else if (correctAns === "False") {
     placeholderText.innerHTML = "Incorrect";
     container.style.border = "10px solid red";
@@ -95,6 +104,7 @@ trueButton.addEventListener("click", async function () {
         document.body.style.backgroundColor = "#6ca3d7"; // Set final background original colour after 1 second
     }, 1000);
   }
+  updateScore();
 });
 
 falseButton.addEventListener("click", async function () {
@@ -107,6 +117,7 @@ falseButton.addEventListener("click", async function () {
     setTimeout(function() {
         document.body.style.backgroundColor = "#6ca3d7"; // Set final background original colour after 1 second
     }, 1000);
+    score++;
   } else if (correctAns === "True") {
     placeholderText.innerHTML = "Incorrect";
     container.style.border = "10px solid red";
@@ -115,8 +126,12 @@ falseButton.addEventListener("click", async function () {
         document.body.style.backgroundColor = "#6ca3d7"; // Set final background original colour after 1 second
     }, 1000);
   }
+  updateScore();
 });
 
+function updateScore() {
+  scoreDisplay.innerHTML = `Score: ${score}`
+}
 // async function nextStatement() {
 //     console.log('We are a go');
 
