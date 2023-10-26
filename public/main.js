@@ -7,6 +7,8 @@ noScore.style.display = "none";
 
 const nextButton = document.getElementById("NB");
 
+let answered = false;
+
 function randomNumber() {
 const num = Math.floor(Math.random() * 20) + 1;
 return num;
@@ -63,6 +65,7 @@ const scoreDisplay = document.getElementById("score");
 const body = document.body;
 const container = document.getElementById("container");
 nextButton.addEventListener("click", async function () {
+  answered = false;
  response = await getData();
   console.log(response);
   //store speonses in variables
@@ -87,6 +90,8 @@ const falseButton = document.getElementById("false-button");
 // for true button
 trueButton.addEventListener("click", async function () {
   // const response = await getData();
+  if (!answered) {
+    answered = true;
   let correctAns = response.data.answer;
   if (correctAns === "True") {
     placeholderText.innerHTML = "Correct";
@@ -103,12 +108,14 @@ trueButton.addEventListener("click", async function () {
     setTimeout(function() {
         document.body.style.backgroundColor = "#6ca3d7"; // Set final background original colour after 1 second
     }, 1000);
-  }
+  }}
   updateScore();
 });
 
 falseButton.addEventListener("click", async function () {
   // const response = await getData();
+  if (!answered) {
+    answered = true;
   let correctAns = response.data.answer;
   if (correctAns === "False") {
     placeholderText.innerHTML = "Correct";
@@ -126,7 +133,7 @@ falseButton.addEventListener("click", async function () {
         document.body.style.backgroundColor = "#6ca3d7"; // Set final background original colour after 1 second
     }, 1000);
   }
-  updateScore();
+  updateScore();}
 });
 
 function updateScore() {
