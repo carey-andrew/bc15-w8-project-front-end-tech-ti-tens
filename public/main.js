@@ -10,31 +10,33 @@ const nextButton = document.getElementById("NB");
 let answered = false;
 
 function randomNumber() {
-const num = Math.floor(Math.random() * 19) + 1;
-return num;
+  const num = Math.floor(Math.random() * 19) + 1;
+  return num;
 }
 // nextButton.addEventListener("click", async function () {
 //   getData(2);
 // });
 
-
 //pulse the background red when clicking wrong answer
 
 function pulseBackgroundred() {
   document.body.style.backgroundColor = "red"; // Set initial background color to red
-    setTimeout(function() {
-        body.style.backgroundColor = "#6ca3d7"; // Set final background original colour after 2 seconds
-    }, 2000);
+  setTimeout(function () {
+    body.style.backgroundColor = "#6ca3d7"; // Set final background original colour after 2 seconds
+  }, 2000);
 }
 
 async function getData() {
-const questionId = randomNumber();
+  const questionId = randomNumber();
   // Declare a variable to store the HTTP response
-  const response = await fetch(`http://localhost:8800/quiz/${questionId}`, {
-    headers: {
-      Accept: "application/json",
-    },
-  });
+  const response = await fetch(
+    `https://quiz-s18p.onrender.com/quiz/${questionId}`,
+    {
+      headers: {
+        Accept: "application/json",
+      },
+    }
+  );
 
   // Check if the response failed, and if so log an error and halt the app
   if (!response.ok) {
@@ -57,7 +59,7 @@ const placeholderText = document.getElementById("statement-text");
 // store the answer in a variable
 //taget the border
 
-let response =  ""
+let response = "";
 
 let score = 0;
 
@@ -66,7 +68,7 @@ const body = document.body;
 const container = document.getElementById("container");
 nextButton.addEventListener("click", async function () {
   answered = false;
- response = await getData();
+  response = await getData();
   console.log(response);
   //store speonses in variables
   let statement = response.data.statement;
@@ -92,23 +94,24 @@ trueButton.addEventListener("click", async function () {
   // const response = await getData();
   if (!answered) {
     answered = true;
-  let correctAns = response.data.answer;
-  if (correctAns === "True") {
-    placeholderText.innerHTML = "Correct";
-    container.style.border = "10px solid green";
-    body.style.backgroundColor = "green"; // Set initial background color to red
-    setTimeout(function() {
+    let correctAns = response.data.answer;
+    if (correctAns === "True") {
+      placeholderText.innerHTML = "Correct";
+      container.style.border = "10px solid green";
+      body.style.backgroundColor = "green"; // Set initial background color to red
+      setTimeout(function () {
         document.body.style.backgroundColor = "#6ca3d7"; // Set final background original colour after 1 second
-    }, 1000);
-    score++;
-  } else if (correctAns === "False") {
-    placeholderText.innerHTML = "Incorrect";
-    container.style.border = "10px solid red";
-    body.style.backgroundColor = "red"; // Set initial background color to red
-    setTimeout(function() {
+      }, 1000);
+      score++;
+    } else if (correctAns === "False") {
+      placeholderText.innerHTML = "Incorrect";
+      container.style.border = "10px solid red";
+      body.style.backgroundColor = "red"; // Set initial background color to red
+      setTimeout(function () {
         document.body.style.backgroundColor = "#6ca3d7"; // Set final background original colour after 1 second
-    }, 1000);
-  }}
+      }, 1000);
+    }
+  }
   updateScore();
 });
 
@@ -116,28 +119,29 @@ falseButton.addEventListener("click", async function () {
   // const response = await getData();
   if (!answered) {
     answered = true;
-  let correctAns = response.data.answer;
-  if (correctAns === "False") {
-    placeholderText.innerHTML = "Correct";
-    container.style.border = "10px solid green"
-    body.style.backgroundColor = "green"; // Set initial background color to red
-    setTimeout(function() {
+    let correctAns = response.data.answer;
+    if (correctAns === "False") {
+      placeholderText.innerHTML = "Correct";
+      container.style.border = "10px solid green";
+      body.style.backgroundColor = "green"; // Set initial background color to red
+      setTimeout(function () {
         document.body.style.backgroundColor = "#6ca3d7"; // Set final background original colour after 1 second
-    }, 1000);
-    score++;
-  } else if (correctAns === "True") {
-    placeholderText.innerHTML = "Incorrect";
-    container.style.border = "10px solid red";
-    body.style.backgroundColor = "red"; // Set initial background color to red
-    setTimeout(function() {
+      }, 1000);
+      score++;
+    } else if (correctAns === "True") {
+      placeholderText.innerHTML = "Incorrect";
+      container.style.border = "10px solid red";
+      body.style.backgroundColor = "red"; // Set initial background color to red
+      setTimeout(function () {
         document.body.style.backgroundColor = "#6ca3d7"; // Set final background original colour after 1 second
-    }, 1000);
+      }, 1000);
+    }
+    updateScore();
   }
-  updateScore();}
 });
 
 function updateScore() {
-  scoreDisplay.innerHTML = `Score: ${score}`
+  scoreDisplay.innerHTML = `Score: ${score}`;
 }
 // async function nextStatement() {
 //     console.log('We are a go');
@@ -146,4 +150,3 @@ function updateScore() {
 // listen for button click and compare user answer to response answer
 // if true, change boarder colour to green and display "well done this is true-press next to continue"
 // display next question
-
