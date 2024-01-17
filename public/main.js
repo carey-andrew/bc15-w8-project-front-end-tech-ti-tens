@@ -30,7 +30,7 @@ async function getData() {
   const questionId = randomNumber();
   // Declare a variable to store the HTTP response
   const response = await fetch(
-    `https://quiz-s18p.onrender.com/quiz/${questionId}`,
+    `https://revisionapp-p423.onrender.com/${questionId}`,
     {
       headers: {
         Accept: "application/json",
